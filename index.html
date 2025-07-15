@@ -1,26 +1,85 @@
-    <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Login page</title>
+  <meta charset="UTF-8" />
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-box {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="button"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-<form>
-    <label for="pswd">Enter your password: </label>
-    <input type="password" id="pswd">
-    <input type="button" value="Submit" onclick="checkPswd();" />
-</form>
-<!--Function to check password the already set password is admin-->
-<script type="text/javascript">
+  <div class="login-box">
+    <h2>Enter Password</h2>
+    <form onsubmit="return false;">
+      <label for="pswd">Password</label>
+      <input type="password" id="pswd" placeholder="Enter password" />
+      <input type="button" value="Submit" onclick="checkPswd();" />
+    </form>
+  </div>
+
+  <script>
     function checkPswd() {
-        var confirmPassword = "TestIntergration";
-        var password = document.getElementById("pswd").value;
-        if (password == confirmPassword) {
-             window.location="TestIntergration.html";
-        }
-        else{
-            alert("Passwords do not match.");
-        }
+      const confirmPassword = "TestIntergration";
+      const password = document.getElementById("pswd").value;
+
+      if (password === confirmPassword) {
+        window.location.href = "TestIntergration.html";
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
     }
-</script>
+  </script>
 </body>
 </html>
